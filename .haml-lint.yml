@@ -1,0 +1,7 @@
+linters:
+  LineLength:
+    enabled: false
+  SpaceInsideHashAttributes:
+    enabled: false
+  ViewLength:
+    max: 200
