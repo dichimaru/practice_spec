@@ -61,6 +61,7 @@ group :test do
   gem "rspec-retry"
   gem "rspec-rails"
   gem "database_rewinder"
+  gem "rails-controller-testing"
 end
 
 
