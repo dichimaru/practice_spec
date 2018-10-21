@@ -44,6 +44,8 @@ group :development, :test do
 
   # Data create
   gem "factory_bot_rails"
+  gem "faker"
+  gem "gimei"
 end
 
 group :development do
@@ -57,7 +59,8 @@ end
 
 group :test do
   gem "rspec-retry"
-  gem 'rspec-rails'
+  gem "rspec-rails"
+  gem "database_rewinder"
 end
 
 
