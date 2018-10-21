@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Fare:
+  = @ticket.fare
+%p
+  %b Entered gate:
+  = @ticket.entered_gate_id
+%p
+  %b Exited gate:
+  = @ticket.exited_gate_id
+
+= link_to 'Edit', edit_ticket_path(@ticket)
+\|
+= link_to 'Back', tickets_path

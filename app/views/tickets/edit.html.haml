@@ -1,0 +1,15 @@
+%h1 Editing ticket
+
+= form_with(model: @ticket, local: true, class: 'form-inline') do |form|
+  =  render 'errors', model: @ticket
+
+  %div{class: "field form-group"}
+    = form.label :exited_gate_id
+    - gate_collection = options_from_collection_for_select(Gate.order_by_station_number, :id, :name, @ticket.exited_gate_id)
+    = form.select :exited_gate_id, gate_collection, { include_blank: false }, id: :ticket_exited_gate_id, class: "form-control"
+
+  = button_tag class: "btn btn-success" do
+    降車する
+
+\|
+= link_to 'Back', tickets_path

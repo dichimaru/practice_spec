@@ -1,0 +1,8 @@
+- if model.errors.any?
+  %div{class: "error-explanation alert alert-danger"}
+    入力値に問題があります。
+
+    %ul.error-messages
+      - model.errors.full_messages.each do |message|
+        %li=  message
+

@@ -1,0 +1,23 @@
+%h1 乗車券一覧
+
+%table.table
+  %thead
+    %tr
+      %th 賃金
+      %th 乗車駅
+      %th 降車駅
+      %th
+
+  %tbody
+    - @tickets.each do |ticket|
+      %tr
+        %td= ticket.fare
+        %td= ticket.entered_gate&.name
+        %td= ticket.exited_gate&.name
+        %td
+          = link_to('降車する', edit_ticket_path(ticket), class: "btn btn-primary #{'disabled' if ticket.exited_gate_id.present?}")
+          = link_to '削除', ticket, method: :delete, class: "btn btn-danger" ,  data: { confirm: "乗車券を削除してよろしいですか？" }
+
+%br
+
+= link_to '乗車する', new_ticket_path

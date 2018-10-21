@@ -1,0 +1,8 @@
+.flash.js-messagejs.js-close-parent{class: css_class}
+  .flash__inner
+    .flash__message
+      %ul#flash-messages-ul
+        - messages.each do |message|
+          %li
+            = message
+    .flash__close-icon.js-close-parent__trigger

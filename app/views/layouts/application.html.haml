@@ -8,4 +8,6 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = yield
+    = render "flash", messages: flash_messages, css_class: flash_message_css_class
+    %div.container
+      = yield

@@ -8,3 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 import 'babel-polyfill'
 
+window.Message = require('./models/message.js').default
+window.Message.bind()

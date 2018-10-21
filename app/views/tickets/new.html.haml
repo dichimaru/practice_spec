@@ -1,0 +1,18 @@
+%h1 乗車
+
+= form_with(model: @ticket, local: true, class: 'form-inline') do |form|
+  =  render 'errors', model: @ticket
+
+  %div{class: "field form-group"}
+    = form.label :fare
+    = form.select :fare, fare_list, { include_blank: false }, id: :ticket_fare, class: "form-control"
+
+  %div{class: "field form-group"}
+    = form.label :entered_gate_id
+    - gate_collection = options_from_collection_for_select(Gate.order_by_station_number, :id, :name, @ticket.entered_gate_id)
+    = form.select :entered_gate_id, gate_collection, { include_blank: false }, id: :ticket_entered_gate_id, class: "form-control"
+
+  = button_tag class: "btn btn-success" do
+    乗車する
+
+= link_to '戻る', tickets_path, class: "btn btn-secondary"

@@ -6,7 +6,7 @@ ruby "2.5.1"
 # Framework
 gem "rails", "~> 5.2.1"
 gem "webpacker"
-gem "sassc-rails"
+gem "sass-rails"
 gem "uglifier"
 
 # Database
@@ -26,9 +26,12 @@ gem "bootsnap", ">= 1.1.0", require: false
 # Views
 gem "haml-rails"
 
-#CSS
+# CSS
 gem "bootstrap", "~> 4.0.0"
 gem "font-awesome-sass", "~> 5.0.6"
+
+# Database seed
+gem "seed-fu"
 
 group :development, :test do
   gem "byebug"
