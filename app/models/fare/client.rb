@@ -4,6 +4,6 @@ class Fare::Client
   end
 
   def seactons
-  fares = {"1": 150, "2": 170}
+    {1 => 150, 2 => 190}
   end
 end
