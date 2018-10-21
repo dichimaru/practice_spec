@@ -61,6 +61,17 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.before(:suite) do
+    DatabaseRewinder.clean_all
+  end
+
+  config.after(:each) do
+    DatabaseRewinder.clean
+  end
+
+  # factory-bot
+  config.include FactoryBot::Syntax::Methods
+
   # rspec-retry
   config.verbose_retry                = true
   config.display_try_failure_messages = true
