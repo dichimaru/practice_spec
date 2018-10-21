@@ -9,12 +9,12 @@ class Ticket < ApplicationRecord
 
 
   def calc?
-    fares = {"1": 150, "2": 170}
     return false if exited_gate.blank?
 
     ride_num = exited_gate&.station_number.to_i - entered_gate.station_number
     return false if ride_num.to_i <= 0
 
+    fares = Fare::Client.new.seactons
     fare <= fares[ride_num]
   end
 end
