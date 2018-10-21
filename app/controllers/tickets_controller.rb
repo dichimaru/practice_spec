@@ -17,8 +17,6 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1/edit
   def edit
-
-    @ticket = Ticket.find(params[:id])
   end
 
   # POST /tickets
@@ -35,11 +33,13 @@ class TicketsController < ApplicationController
 
   # PATCH/PUT /tickets/1
   def update
-    @ticket = Ticket.find(params[:id])
+    @ticket.assign_attributes(ticket_params)
     unless @ticket.valid?
       return render :edit
     end
-    @ticket.update(ticket_params)
+
+    @ticket.save!
+    
     redirect_to tickets_path, notice: "#{@ticket.exited_gate.name}で降車しました。"
   end
 
@@ -53,6 +53,8 @@ class TicketsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
       @ticket = Ticket.find(params[:id])
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_to tickets_path, status: :not_found, alert: "乗車情報は既に削除されています。"
     end
 
     # Only allow a trusted parameter "white list" through.
