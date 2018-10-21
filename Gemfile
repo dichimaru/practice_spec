@@ -56,6 +56,7 @@ group :development do
 end
 
 group :test do
+  gem "rspec-retry"
   gem 'rspec-rails'
 end
 
