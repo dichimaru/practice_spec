@@ -15,6 +15,6 @@ class Ticket < ApplicationRecord
     return false if ride_num.to_i <= 0
 
     fares = Fare::Client.new.seactons
-    fare <= fares[ride_num]
+    fare >= fares[ride_num]
   end
 end
