@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  database:
+    image: mysql:5.7
+    command: mysqld
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '13306:3306'
+    volumes:
+      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./docker/mysql/volumes:/var/lib/mysql

@@ -34,3 +34,6 @@ yarn-debug.log*
 
 # Ignore intellij config.
 /.idea
+
+# Ignore Docker mysql volume
+/docker/mysql/volumes

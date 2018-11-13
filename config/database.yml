@@ -14,8 +14,9 @@ default: &default
   encoding: utf8mb4
   charset:   utf8mb4
   username: root
-  password: admin
-  host: localhost
+  password: root
+  host: 127.0.0.1
+  port: 13306
   collation: utf8mb4_general_ci
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   variables:
