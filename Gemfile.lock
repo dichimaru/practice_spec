@@ -42,6 +42,10 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    archive-zip (0.11.0)
+      io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.3.1)
@@ -60,6 +64,22 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     byebug (10.0.2)
+    capybara (3.11.1)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (~> 1.2)
+      xpath (~> 3.2)
+    capybara-screenshot (1.0.22)
+      capybara (>= 1.0, < 4)
+      launchy
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (2.1.0)
+      archive-zip (~> 0.10)
+      nokogiri (~> 1.8)
     coderay (1.1.2)
     concurrent-ruby (1.1.3)
     crass (1.0.4)
@@ -75,12 +95,15 @@ GEM
       railties (>= 3.0.0)
     faker (1.9.1)
       i18n (>= 0.7)
+    fakeredis (0.7.0)
+      redis (>= 3.2, < 5.0)
     ffi (1.9.25)
     ffi (1.9.25-java)
     ffi (1.9.25-x64-mingw32)
     ffi (1.9.25-x86-mingw32)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
+    gherkin (5.1.0)
     gimei (0.3.0)
       romaji
     globalid (0.4.1)
@@ -107,8 +130,14 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    io-like (0.3.0)
     jaro_winkler (1.5.1)
     jaro_winkler (1.5.1-java)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    launchy (2.4.3-java)
+      addressable (~> 2.3)
+      spoon (~> 0.0.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -159,6 +188,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.7)
       pry (>= 0.10.4)
+    public_suffix (3.0.3)
     puma (3.12.0)
     puma (3.12.0-java)
     rack (2.0.6)
@@ -199,8 +229,14 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.3)
+    regexp_parser (1.3.0)
     romaji (0.2.4)
       rake (>= 0.8.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -232,6 +268,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
+    rubyzip (1.2.2)
     sass (3.7.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -249,6 +286,9 @@ GEM
     seed-fu (2.3.9)
       activerecord (>= 3.1)
       activesupport (>= 3.1)
+    selenium-webdriver (3.141.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2, >= 1.2.2)
     sexp_processor (4.11.0)
     spoon (0.0.6)
       ffi
@@ -270,6 +310,9 @@ GEM
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
     tilt (2.0.8)
+    turnip (3.1.0)
+      gherkin (~> 5.0)
+      rspec (>= 3.0, < 4.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     tzinfo-data (1.2018.7)
@@ -292,6 +335,8 @@ GEM
     websocket-driver (0.7.0-java)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
     xray-rails (0.3.1)
       rails (>= 3.1.0)
 
@@ -307,15 +352,19 @@ DEPENDENCIES
   bootstrap (>= 4.1.2)
   bullet
   byebug
+  capybara
+  capybara-screenshot
+  chromedriver-helper
   database_rewinder
   factory_bot_rails
   faker
+  fakeredis
   font-awesome-sass (~> 5.0.6)
   gimei
   haml-rails
   haml_lint
   listen (>= 3.0.5, < 3.2)
-  mysql2 (>= 0.4.4, < 0.6.0)
+  mysql2
   pry-byebug
   pry-rails
   puma (~> 3.11)
@@ -326,8 +375,10 @@ DEPENDENCIES
   rubocop
   sass-rails
   seed-fu
+  selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  turnip
   tzinfo-data
   uglifier
   web-console (>= 3.3.0)
@@ -335,7 +386,7 @@ DEPENDENCIES
   xray-rails
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
