@@ -63,6 +63,7 @@ group :test do
   gem "database_rewinder"
   gem "rails-controller-testing"
   gem "fakeredis", require: "fakeredis/rspec"
+  gem "rspec_junit_formatter"
 
   # E2E test
   gem 'capybara'
