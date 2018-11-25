@@ -1,0 +1,15 @@
+
+development: &base
+  adapter:  mysql2
+  database: practice_spec_development
+  username: ubuntu
+  password: ''
+  encoding:  utf8
+  reconnect: true
+  pool: 5
+  collation: utf8_general_ci
+  min_messages: WARNING
+
+test:
+  <<: *base
+  database: practice_spec_test
