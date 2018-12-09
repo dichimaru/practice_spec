@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.5.1"
+ruby "2.5.3"
 
 # Framework
 gem "rails", "~> 5.2.1"
@@ -10,7 +10,7 @@ gem "sass-rails"
 gem "uglifier"
 
 # Database
-gem "mysql2", ">= 0.4.4", "< 0.6.0"
+gem "mysql2"
 
 # Server
 gem "puma", "~> 3.11"
@@ -62,6 +62,15 @@ group :test do
   gem "rspec-rails"
   gem "database_rewinder"
   gem "rails-controller-testing"
+  gem "fakeredis", require: "fakeredis/rspec"
+  gem "rspec_junit_formatter"
+
+  # E2E test
+  gem 'capybara'
+  gem "turnip"
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem "capybara-screenshot"
 end
 
 
