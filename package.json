@@ -2,12 +2,12 @@
   "name": "practice_spec",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
-    "vue": "^2.5.17",
-    "vue-loader": "14.2.2",
-    "vue-template-compiler": "^2.5.17"
+    "@rails/webpacker": "4.0.2",
+    "vue": "^2.6.8",
+    "vue-loader": "15.7.0",
+    "vue-template-compiler": "^2.6.8"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "3.2.1"
   }
 }
