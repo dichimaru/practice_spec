@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2018_10_21_060305) do
 
-  create_table "gates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+  create_table "gates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "station_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+  create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "fare"
     t.integer "entered_gate_id"
     t.integer "exited_gate_id"
