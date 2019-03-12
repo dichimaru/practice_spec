@@ -22,10 +22,6 @@ gem "haml-rails"
 # Performance
 gem "bootsnap", ">= 1.1.0", require: false
 
-
-# Views
-gem "haml-rails"
-
 # CSS
 gem "bootstrap", ">= 4.1.2"
 gem "font-awesome-sass", "~> 5.0.6"
