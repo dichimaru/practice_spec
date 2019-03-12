@@ -6,7 +6,7 @@ ruby "2.5.3"
 # Framework
 gem "rails", "~> 5.2.1"
 gem "webpacker"
-gem "sass-rails"
+gem "sassc-rails"
 gem "uglifier"
 
 # Database
