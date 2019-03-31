@@ -65,7 +65,6 @@ group :test do
   gem 'capybara'
   gem "turnip"
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
   gem "capybara-screenshot"
 end
 

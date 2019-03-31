@@ -22,4 +22,5 @@ RSpec.configure do |config|
   # factory-bot
   config.include FactoryBot::Syntax::Methods
   config.include Capybara::DSL
+  config.include CapybaraHelper
 end
