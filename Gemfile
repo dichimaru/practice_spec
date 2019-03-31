@@ -62,9 +62,9 @@ group :test do
   gem "rspec_junit_formatter"
 
   # E2E test
-  gem 'capybara'
+  gem "capybara"
   gem "turnip"
-  gem 'selenium-webdriver'
+  gem "selenium-webdriver"
   gem "capybara-screenshot"
 end
 

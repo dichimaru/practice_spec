@@ -1,5 +1,4 @@
 class Gate < ApplicationRecord
-
   validates :name, presence: true, uniqueness: true
   validates :station_number, presence: true, uniqueness: true
 

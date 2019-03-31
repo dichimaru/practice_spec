@@ -8,12 +8,12 @@ step "乗車券一覧に遷移する" do
   visit("/tickets")
 end
 
-step"切符で:price円を選択する" do |price|
-  select price, from: 'ticket[fare]'
+step "切符で:price円を選択する" do |price|
+  select price, from: "ticket[fare]"
 end
 
-step"乗車駅で:gate_nameを選択する" do |gate_name|
-  select gate_name, from: 'ticket[entered_gate_id]'
+step "乗車駅で:gate_nameを選択する" do |gate_name|
+  select gate_name, from: "ticket[entered_gate_id]"
 end
 
 # db

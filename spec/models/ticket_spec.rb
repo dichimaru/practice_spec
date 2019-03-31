@@ -16,7 +16,7 @@ RSpec.describe Ticket, type: :model do
       let(:ticket)       { create(:ticket, fare: 150, entered_gate_id: entered_gate.id, exited_gate_id: exited_gate.id) }
 
       before do
-        allow_any_instance_of(Fare::Client).to receive(:seactons).and_return( {1 => 160, 2 => 190})
+        allow_any_instance_of(Fare::Client).to receive(:seactons).and_return(1 => 160, 2 => 190)
       end
 
       it "falseが返却されること" do

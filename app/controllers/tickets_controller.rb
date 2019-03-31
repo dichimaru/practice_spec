@@ -39,14 +39,14 @@ class TicketsController < ApplicationController
     end
 
     @ticket.save!
-    
+
     redirect_to tickets_path, notice: "#{@ticket.exited_gate.name}で降車しました。"
   end
 
   # DELETE /tickets/1
   def destroy
     @ticket.destroy
-    redirect_to tickets_url, notice: '乗車券を削除しました。'
+    redirect_to tickets_url, notice: "乗車券を削除しました。"
   end
 
   private
