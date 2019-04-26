@@ -8,6 +8,16 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = render "flash", messages: flash_messages, css_class: flash_message_css_class
+    = render "flash", messages: flash_messages, css_class:   flash_message_css_class
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container
+        %a.navbar-brand
+          = image_tag "logo.png", size: "48x48", alt: "logo"
+        %div.collapse.navbar-collapse#navbarNav
+          %ul.navbar-nav
+            %li.nav-item.active
+              = link_to "乗車", root_path, class: 'nav-link'
+            %li.nav-item
+              = link_to "駅情報", root_path, class: 'nav-link'
     %div.container
       = yield

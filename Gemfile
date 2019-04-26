@@ -8,6 +8,7 @@ gem "rails", "~> 5.2.1"
 gem "webpacker"
 gem "sass-rails"
 gem "uglifier"
+gem "jquery-rails"
 
 # Database
 gem "mysql2"
