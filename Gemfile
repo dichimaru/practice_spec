@@ -60,6 +60,7 @@ group :test do
   gem "rails-controller-testing"
   gem "fakeredis", require: "fakeredis/rspec"
   gem "rspec_junit_formatter"
+  gem 'single_cov'
 
   # E2E test
   gem "capybara"

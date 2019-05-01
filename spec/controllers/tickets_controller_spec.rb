@@ -1,5 +1,6 @@
 require "rails_helper"
 
+SingleCov.covered!
 RSpec.describe TicketsController, type: :controller do
 
   describe "#update" do
