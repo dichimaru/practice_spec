@@ -36,6 +36,7 @@ jobs:
           name: install dependencies
           command: |
             sudo gem update --system
+            sudo rm /usr/local/bin/bundle
             sudo gem install bundler
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
