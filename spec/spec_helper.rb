@@ -1,5 +1,8 @@
 require "rails_helper"
 require "rspec/retry"
+require 'single_cov'
+
+SingleCov.setup :rspec
 
 RSpec.configure do |config|
 
