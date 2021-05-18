@@ -13,7 +13,7 @@ gem "uglifier"
 gem "mysql2"
 
 # Server
-gem "puma", "~> 3.11"
+gem "puma", "~> 4.3"
 
 # Views
 gem "haml-rails"
